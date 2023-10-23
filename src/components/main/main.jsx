@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+import { useState } from "react";
+
 const Main =()=>{
+
+    const [videoData, setVideoData] = useState();
+
 
     const url = 'https://youtube-v31.p.rapidapi.com/search?relatedToVideoId=7ghhRHRP6t4&part=id%2Csnippet&type=video&maxResults=50';
     const options = {
@@ -8,14 +14,21 @@ const Main =()=>{
             'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
         }
     };
+
+    useEffect(() => {
+        fetch(url, options)
+        .then(response => response.json())
+        .then(response => setVideoData(response.items))
+        .catch(err => console.error(err));
+    }, [])
     
-    try {
-        const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
-    } catch (error) {
-        console.error(error);
-    }
+    // try {
+    //     const response = await fetch(url, options);
+    //     const result = await response.text();
+    //     console.log(result);
+    // } catch (error) {
+    //     console.error(error);
+    // }
 
 
 
