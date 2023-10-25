@@ -41,7 +41,7 @@ const Video = () => {
     <div className="container mx-auto px-[75px] pb-12">
         <div className="w-[70%] pt-[110px] pb-5 border-b-2 border-b-[#C2C2C2]">
           <img className="w-full h-auto rounded-2xl"
-            src={videoData?.items[0].snippet.thumbnails.medium.url}
+            src={videoData?.items[0].snippet.thumbnails.maxres.url}
             alt={videoData?.items[0].snippet.title}
             />
           <h2 className="text-3xl font-semibold pt-5">{videoData?.items[0].snippet.title}</h2>
@@ -64,6 +64,10 @@ const Video = () => {
               <img className="ml-[30px]" src={Moredots_icon} alt="more" />
             </div>
            </div>
+          </div>
+
+          <div>
+
           </div>
         </div>
       </div>
