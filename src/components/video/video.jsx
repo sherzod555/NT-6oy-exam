@@ -1,6 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
+
+import Like_icon from "../../assets/like.svg"
+import Share_icon from "../../assets/share.svg"
+import Moredots_icon from "../../assets/moredots.svg"
+
 const Video = () => {
   const { videoId } = useParams();
 
@@ -30,17 +36,38 @@ const Video = () => {
   }, []);
 
   return (
-    <div className="container mx-auto pl-60 pr-16 bg-gray-500">
-      <div className="grid grid-cols-3 gap-4">
-        <div>
-          <img
+    <>
+
+    <div className="container mx-auto px-[75px] pb-12">
+        <div className="w-[70%] pt-[110px] pb-5 border-b-2 border-b-[#C2C2C2]">
+          <img className="w-full h-auto rounded-2xl"
             src={videoData?.items[0].snippet.thumbnails.medium.url}
             alt={videoData?.items[0].snippet.title}
-          />
-          <h2 className="text-white">{videoData?.items[0].snippet.title}</h2>
+            />
+          <h2 className="text-3xl font-semibold pt-5">{videoData?.items[0].snippet.title}</h2>
+          <div className="pt-3 flex justify-between items-center">
+           <p className="text-[#C2C2C2] text-sm">{videoData?.items[0].statistics.viewCount} views</p>
+           <div className="flex items-center gap-x-[10px]">
+            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB]">
+              <img src={Like_icon} alt="like" />
+              <p>{videoData?.items[0].statistics.likeCount}</p>
+            </div>
+            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB]">
+              <img className="-scale-y-100" src={Like_icon} alt="dislike" />
+              <p>Dislikes</p>
+            </div>
+            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB]">
+              <img src={Share_icon} alt="share" />
+              <p>Share</p>
+            </div>
+            <div>
+            <img className="pl-[30px]" src={Moredots_icon} alt="more" />
+            </div>
+           </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

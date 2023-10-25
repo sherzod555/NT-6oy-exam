@@ -12,6 +12,7 @@ import More_Icon from "../../assets/array-down.svg"
 import Sub_ava from "../../assets/miakh.jpg"
 import Setting_Icon from "../../assets/setting-icon.svg"
 
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -43,10 +44,19 @@ const Aside =()=>{
         { icon: Sub_ava, name: 'Joslyn James' },
     ];
 
+
+    // const location = useLocation();
+
+    // const isHomePage = location.pathname === '/';
+
     return(
         <>
+        {/* {isHomePage && ( */}
+
+
+        
         <aside className="h-[84vh] w-52 fixed">
-            <div className="pl-8 h-full custom_scroll overflow-y-auto custom_scroll text-base text-[#898989]">
+            <div className="pl-8 mt-[110px] h-full custom_scroll overflow-y-auto custom_scroll text-base text-[#898989]">
                 <div>
                     <ul>
                         {mock_data_home.map((item, index) => (
@@ -80,7 +90,7 @@ const Aside =()=>{
                     </ul>
                 </div>
 
-                <button className="mt-14 flex items-center gap-x-4 hover:text-red-600 hover:font-medium">
+                <button className="mt-14 mb-10 flex items-center gap-x-4 hover:text-red-600 hover:font-medium">
                     <img src={Setting_Icon} alt="setting" />
                     <p>
                         Setting
@@ -90,8 +100,8 @@ const Aside =()=>{
 
 
 
-            
         </aside>
+        {/* )} */}
         </>
     )
 }

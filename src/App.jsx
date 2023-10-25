@@ -1,7 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/header/header";
-import Aside from "./components/aside/aside";
+// import Aside from "./components/aside/aside";
 import Main from "./components/main/main";
 import Video from "./components/video/video";
 
@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Header />
-      <Aside />
+      {/* <Aside /> */}
       <RouterProvider router={router} />
     </>
   );

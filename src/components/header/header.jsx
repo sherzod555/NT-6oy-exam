@@ -6,17 +6,18 @@ import cameraIcon from "../../assets/camera.svg";
 import dotsIcon from "../../assets/dots.svg";
 import bellIcon from "../../assets/bell.svg";
 import profileAva from "../../assets/miakh.jpg";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Header =() =>{
 
     return(
         <>
-            <div className="container mx-auto pr-16 pl-8 pb-3">
+            <div className="container mx-auto pr-16 pl-8 pb-3 fixed bg-white">
                 <div className="flex items-center justify-between py-5">
 
                     <div className="nav_logo_side flex items-center justify-between">
+                    
                         <img src={hamburgerMenu} alt="hamburger-menu" className="mr-7" />
                         <img src={fullLogo} alt="logo" />
                         <img src={miniLogo} alt="logo" className="hidden" />
