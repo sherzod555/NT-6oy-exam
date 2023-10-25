@@ -13,8 +13,8 @@ const Header =() =>{
 
     return(
         <>
-            <div className="container mx-auto pr-16 pl-8 pb-3 fixed bg-white">
-                <div className="flex items-center justify-between py-5">
+            <div className="container mx-auto  pb-3 fixed bg-white">
+                <div className="flex w-screen pr-16 pl-8 items-center justify-between py-5">
 
                     <div className="nav_logo_side flex items-center justify-between">
                     
@@ -23,7 +23,7 @@ const Header =() =>{
                         <img src={miniLogo} alt="logo" className="hidden" />
                     </div>
 
-                    <div className="nav_search_side w-6/12">
+                    <div className="nav_search_side max-w-5xl w-6/12">
                         <div className="flex items-center justify-between py-3 px-6 bg-[#ebebeb4d] rounded-3xl">
                             <input className="bg-[#ffffff00] w-full outline-none" type="search" name="search" id="search" placeholder="Search" />
                             <img src={searchIcon} alt="search-icon" className="ml-4" />
@@ -32,10 +32,10 @@ const Header =() =>{
 
                     <div className="nav_profile_side">
                         <ul className="flex items-center gap-x-[50px]">
-                            <li><a href='/'></a><img src={cameraIcon} alt="icon" /></li>
-                            <li><a href='/'></a><img src={dotsIcon} alt="icon" /></li>
-                            <li><a href='/'></a><img src={bellIcon} alt="icon" /></li>
-                            <li><a href='/'></a><img className="h-10 w-10 rounded-full" src={profileAva} alt="icon" /></li>
+                            <li><a href='/'><img src={cameraIcon} alt="icon" /></a></li>
+                            <li><a href='/'><img src={dotsIcon} alt="icon" /></a></li>
+                            <li><a href='/'><img src={bellIcon} alt="icon" /></a></li>
+                            <li><a href='/'><img className="h-10 w-10 rounded-full" src={profileAva} alt="icon" /></a></li>
                             
                         </ul>
                     </div>

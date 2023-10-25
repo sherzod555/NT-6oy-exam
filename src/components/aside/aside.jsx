@@ -36,12 +36,12 @@ const Aside =()=>{
         { icon: More_Icon, name: 'Show more' },
       ];
     const mock_data_subs =[
-        { icon: Sub_ava, name: 'Mia Khalifa' },
-        { icon: Sub_ava, name: 'Connie Carter' },
+        { icon: Sub_ava, name: 'Kulinov ► Play' },
+        { icon: Sub_ava, name: 'SHER_555' },
         { icon: Sub_ava, name: 'Lana Rhoades' },
-        { icon: Sub_ava, name: 'Alexis Fawn' },
-        { icon: Sub_ava, name: 'Elsa Jean' },
-        { icon: Sub_ava, name: 'Joslyn James' },
+        { icon: Sub_ava, name: 'Marmok' },
+        { icon: Sub_ava, name: 'Sherzod Yodgorov' },
+        { icon: Sub_ava, name: 'Mia Khalifa' },
     ];
 
 
@@ -55,7 +55,7 @@ const Aside =()=>{
 
 
         
-        <aside className="h-[84vh] w-52 fixed">
+        <aside className="h-[84vh] w-56 fixed">
             <div className="pl-8 mt-[110px] h-full custom_scroll overflow-y-auto custom_scroll text-base text-[#898989]">
                 <div>
                     <ul>

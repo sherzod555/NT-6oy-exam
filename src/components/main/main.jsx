@@ -2,24 +2,39 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Aside from "../aside/aside"
+import moment from "moment";
+
+
+
 
 const Main = () => {
-  const [videosData, setVideosData] = useState([]);
+  
+  const convertPublishTimeToAgo = (publishTime) => {
+    return moment(publishTime).fromNow();
+  };
 
+  
+
+
+  const [videosData, setVideosData] = useState([]);
+  
   async function getVideosData() {
     const url =
-      "https://youtube-v31.p.rapidapi.com/search?part=id%2Csnippet&type=video&maxResults=50&regionCode=UZ";
+    "https://youtube-v31.p.rapidapi.com/search?part=id%2Csnippet&type=video&maxResults=300";
     const options = {
       method: "GET",
       headers: {
         'X-RapidAPI-Key': 'b40207ed57msh5b1111125dadd92p169be0jsn29e821f237fb',
-		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
+        'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
       },
     };
     const res = await fetch(url, options);
     const data = await res.json();
     setVideosData(data.items);
+    console.log(data.items);
+    
   }
+
 
   useEffect(() => {
     try {
@@ -29,10 +44,15 @@ const Main = () => {
     }
   }, []);
 
+
+  const getRandomViews = () => {
+    return Math.floor(Math.random() * 999) + 1; // Adjust the range as needed
+  };
+
   return (
     <>
     <Aside/>
-      <main className="container mx-auto pl-60 pr-16">
+      <main className="container mx-auto pl-64 pr-16">
         <div className="pt-[110px]">
           <div className="grid grid-cols-4 gap-x-8 gap-y-10">
             {videosData.map((video) => (
@@ -46,12 +66,12 @@ const Main = () => {
                     <p className="pt-[10px] text-base font-semibold line-clamp-1">{video.snippet.title}</p>
                     <div className="pt-2 flex items-center justify-between text-[#C2C2C2] text-xs">
                         <div className="flex gap-x-2 items-center">
-                            <p> 800 views</p>
+                            <p> {getRandomViews()} k views</p>
                             <p>•</p>
-                            <p>3 days ago</p>
+                            <p>{convertPublishTimeToAgo(video.snippet.publishTime)}</p>
                         </div>
                         <div>
-                            <p>Abella Danger</p>
+                            <p>{video.snippet.channelTitle}</p>
                         </div>
                     </div>
               </Link>
