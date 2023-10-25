@@ -48,20 +48,20 @@ const Video = () => {
           <div className="pt-3 flex justify-between items-center">
            <p className="text-[#C2C2C2] text-sm">{videoData?.items[0].statistics.viewCount} views</p>
            <div className="flex items-center gap-x-[10px]">
-            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB]">
+            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB] hover:bg-[#d5d5d5]">
               <img src={Like_icon} alt="like" />
               <p>{videoData?.items[0].statistics.likeCount}</p>
             </div>
-            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB]">
+            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB] hover:bg-[#d5d5d5]">
               <img className="-scale-y-100" src={Like_icon} alt="dislike" />
               <p>Dislikes</p>
             </div>
-            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB]">
+            <div className="flex gap-x-2 items-center px-5 py-[8px] rounded-[20px] bg-[#EBEBEB] hover:bg-[#d5d5d5]">
               <img src={Share_icon} alt="share" />
               <p>Share</p>
             </div>
             <div>
-            <img className="pl-[30px]" src={Moredots_icon} alt="more" />
+              <img className="ml-[30px]" src={Moredots_icon} alt="more" />
             </div>
            </div>
           </div>
