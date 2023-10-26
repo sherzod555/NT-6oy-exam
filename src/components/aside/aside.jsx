@@ -11,8 +11,7 @@ import Game_Icon from "../../assets/games.svg"
 import More_Icon from "../../assets/array-down.svg"
 import Sub_ava from "../../assets/miakh.jpg"
 import Setting_Icon from "../../assets/setting-icon.svg"
-
-import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom"
 
 
 
@@ -45,30 +44,31 @@ const Aside =()=>{
     ];
 
 
-    // const location = useLocation();
-
-    // const isHomePage = location.pathname === '/';
+    
 
     return(
         <>
-        {/* {isHomePage && ( */}
+        
 
 
         
-        <aside className="h-[84vh] w-56 fixed">
-            <div className="pl-8 mt-[110px] h-full custom_scroll overflow-y-auto custom_scroll text-base text-[#898989]">
+        <aside className="hidden sm:block sm:h-[84vh] md:w-56 sm:w-48 sm:fixed">
+            <div className="sm:pl-8 mt-[110px] sm:h-full custom_scroll overflow-y-auto sm:text-xs md:text-base text-[#898989]">
                 <div>
                     <ul>
+
                         {mock_data_home.map((item, index) => (
-                            <li className="flex items-center gap-x-4 pb-7" key={index}>
+                            <li key={index}>
+                                <Link className="sm:flex items-center sm:gap-x-2 md:gap-x-4 sm:pb-5 md:pb-7" to='/'>
                                 <img src={item.icon} alt={`Icon for ${item.name}`} />
                                 {item.name}
+                                </Link>
                             </li>
                         ))}
                     </ul>
-                    <ul className="pt-10">
+                    <ul className="md:pt-10 sm:pt-8">
                         {mock_data_category.map((item, index) => (
-                            <li className="flex items-center gap-x-4 pb-7" key={index}>
+                            <li className="sm:flex items-center sm:gap-x-2 md:gap-x-4 sm:pb-5 md:pb-7" key={index}>
                                 <img src={item.icon} alt={`Icon for ${item.name}`} />
                                 {item.name}
                             </li>
@@ -76,21 +76,21 @@ const Aside =()=>{
                     </ul>
                 </div>
 
-                <div className="pt-10">
-                    <p className="text-lg font-bold text-black">
+                <div className="md:pt-10 sm:pt-8">
+                    <p className="md:text-lg sm:text-base sm:font-bold text-black">
                         Subscriptions
                     </p>
-                    <ul className="pt-7">
+                    <ul className="md:pt-7 sm:pt-5">
                         {mock_data_subs.map((item, index) => (
-                            <li className="flex items-center gap-x-4 pb-7" key={index}>
-                                <img className="h-[26px] w-[26px] rounded-full" src={item.icon} alt={`Icon for ${item.name}`} />
+                            <li className="sm:flex items-center sm:gap-x-2 md:gap-x-4 sm:pb-5 md:pb-7" key={index}>
+                                <img className="sm:h-[26px] sm:w-[26px] rounded-full" src={item.icon} alt={`Icon for ${item.name}`} />
                                 {item.name}
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                <button className="mt-14 mb-10 flex items-center gap-x-4 hover:text-red-600 hover:font-medium">
+                <button className="sm:mt-14 sm:mb-10 sm:flex items-center sm:gap-x-2 md:gap-x-4 hover:text-red-600 hover:font-medium">
                     <img src={Setting_Icon} alt="setting" />
                     <p>
                         Setting
@@ -101,7 +101,30 @@ const Aside =()=>{
 
 
         </aside>
-        {/* )} */}
+
+        <div className="sm:hidden block fixed bottom-0 w-screen py-3 bg-white">
+        <ul className="flex items-center justify-around text-xs font-medium">
+
+                        {mock_data_home.map((item, index) => (
+                            <li key={index}>
+                                <Link className="flex flex-col gap-y-1 items-center" to='/'>
+                                <img src={item.icon} alt={`Icon for ${item.name}`} />
+                                <p>{item.name}</p>
+                                </Link>
+                            </li>
+                        ))}
+                        <li>
+                        <button className="flex flex-col gap-y-1 items-center">
+                    <img src={Setting_Icon} alt="setting" />
+                    <p>
+                        Setting
+                    </p>
+                </button>
+                        </li>
+                    </ul>
+                    
+        </div>
+        
         </>
     )
 }

@@ -36,16 +36,16 @@ const Header = () => {
   return (
     <>
       <div className="container mx-auto  pb-3 fixed">
-        <div className="flex w-screen  bg-white pr-16 pl-8 items-center justify-between py-5">
-          <div className="nav_logo_side flex items-center justify-between">
-            <img src={hamburgerMenu} alt="hamburger-menu" className="mr-7" />
+        <div className="sm:gap-x-5 flex w-screen  bg-white px-4 py-3 md:pr-16 md:pl-8 items-center justify-between sm:py-5">
+          <div className="flex items-center justify-between">
+            <img src={hamburgerMenu} alt="hamburger-menu" className="hidden sm:block mr-7" />
             <Link to="/">
-              <img src={fullLogo} alt="logo" />
-              <img src={miniLogo} alt="logo" className="hidden" />
+              <img className="hidden sm:h-[25px] sm:w-auto sm:block" src={fullLogo} alt="logo" />
+              <img src={miniLogo} alt="logo" className="block sm:hidden h-auto w-9" />
             </Link>
           </div>
 
-          <div className="nav_search_side max-w-5xl w-6/12">
+          <div className="md:max-w-5xl sm:max-w-4xl w-6/12">
             <div className="flex items-center justify-between py-3 px-6 bg-[#ebebeb4d] rounded-3xl">
               <input
                 className="bg-[#ffffff00] w-full outline-none"
@@ -56,37 +56,44 @@ const Header = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleEnter}
               />
-              <img src={searchIcon} alt="search-icon" className="ml-4" />
+              <img src={searchIcon} alt="search-icon" className="sm:ml-4 hidden sm:block" />
             </div>
           </div>
 
           <div className="nav_profile_side">
-            <ul className="flex items-center gap-x-[50px]">
+            <ul className="hidden sm:flex sm:items-center md:gap-x-[50px] sm:gap-x-5">
               <li>
-                <a href="/">
+                <Link to="/">
                   <img src={cameraIcon} alt="icon" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <img src={dotsIcon} alt="icon" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <img src={bellIcon} alt="icon" />
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/">
+                <Link to="/">
                   <img
                     className="h-10 w-10 rounded-full"
                     src={profileAva}
                     alt="icon"
                   />
-                </a>
+                </Link>
               </li>
             </ul>
+            <Link className="block sm:hidden" to="/">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src={profileAva}
+                    alt="icon"
+                  />
+            </Link>
           </div>
         </div>
       </div>

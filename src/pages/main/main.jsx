@@ -25,7 +25,7 @@ const Main = () => {
   return (
     <>
       <div className="pt-[110px]">
-        <div className="grid grid-cols-3 gap-x-8 gap-y-10">
+        <div className="grid gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-10">
           {videos.map((video) => (
             <Video key={video.id.videoId} video={video} />
           ))}
