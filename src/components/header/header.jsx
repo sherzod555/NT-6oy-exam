@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { DataContext } from "../../context";
 import fetchVideos from "../../fetch.js";
 import hamburgerMenu from "../../assets/hamburger.svg";
@@ -19,11 +19,10 @@ const Header = () => {
   const navigate = useNavigate();
 
   async function searchVideos() {
-    const data = await fetch(
+    const data = await fetchVideos(
       `https://youtube-v31.p.rapidapi.com/search?q=${searchQuery}&part=id%2Csnippet&type=video&maxResults=50`
     );
 
-    console.log(data);
     setSearchVideos(data.items);
   }
 
@@ -40,10 +39,10 @@ const Header = () => {
         <div className="flex w-screen  bg-white pr-16 pl-8 items-center justify-between py-5">
           <div className="nav_logo_side flex items-center justify-between">
             <img src={hamburgerMenu} alt="hamburger-menu" className="mr-7" />
-            <a href="/">
+            <Link to="/">
               <img src={fullLogo} alt="logo" />
               <img src={miniLogo} alt="logo" className="hidden" />
-            </a>
+            </Link>
           </div>
 
           <div className="nav_search_side max-w-5xl w-6/12">

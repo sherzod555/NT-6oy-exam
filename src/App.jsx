@@ -5,6 +5,7 @@ import Main from "./pages/main/main";
 import Video from "./pages/video/video";
 import Search from "./pages/search/search";
 import RootLayout from "./RootLayout";
+import Header from "./components/header/header";
 
 function App() {
   const router = createBrowserRouter([
@@ -13,7 +14,7 @@ function App() {
       element: <RootLayout />,
       children: [
         {
-          path: "/",
+          index: true,
           element: <Main />,
         },
         {
@@ -24,7 +25,12 @@ function App() {
     },
     {
       path: "/video/:videoId",
-      element: <Video />,
+      element: (
+        <>
+          <Header />
+          <Video />
+        </>
+      ),
     },
   ]);
 
