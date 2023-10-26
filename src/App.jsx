@@ -1,25 +1,26 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./components/header/header";
-// import Aside from "./components/aside/aside";
-import Main from "./components/main/main";
-import Video from "./components/video/video";
-import {useState } from "react";
-
+import DataProvider from "./context";
+import Main from "./pages/main/main";
+import Video from "./pages/video/video";
+import Search from "./pages/search/search";
+import RootLayout from "./RootLayout";
 
 function App() {
-
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearchSubmit = (query) => {
-    setSearchQuery(query);
-  };
-
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Main searchQuery={searchQuery} />,
+      element: <RootLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Main />,
+        },
+        {
+          path: "/search",
+          element: <Search />,
+        },
+      ],
     },
     {
       path: "/video/:videoId",
@@ -28,11 +29,9 @@ function App() {
   ]);
 
   return (
-    <>
-      <Header onSearchSubmit={handleSearchSubmit} />
-      {/* <Aside /> */}
+    <DataProvider>
       <RouterProvider router={router} />
-    </>
+    </DataProvider>
   );
 }
 
