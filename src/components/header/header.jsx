@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <>
       <div className="container mx-auto  pb-3 fixed">
-        <div className="sm:gap-x-5 flex w-screen  bg-white px-4 py-3 md:pr-16 md:pl-8 items-center justify-between sm:py-5">
+        <div className="sm:gap-x-5 flex w-screen  bg-white px-5 py-3 md:pr-16 md:pl-8 items-center justify-between sm:py-5">
           <div className="flex items-center justify-between">
             <img src={hamburgerMenu} alt="hamburger-menu" className="hidden sm:block mr-7" />
             <Link to="/">
