@@ -51,7 +51,7 @@ const Video = () => {
   return (
     <>
       <div className="container mx-auto px-4 sm:px-[75px] pb-12">
-        <div className="sm:w-full md:w-[70%] pt-[110px]">
+        <div className="sm:w-full lg:w-[70%] pt-[110px]">
           <div className="pb-5 border-b-2 border-b-[#C2C2C2]">
             <img
               className="w-full h-auto rounded-2xl"
@@ -83,32 +83,34 @@ const Video = () => {
                   <p>Share</p>
                 </button>
                 <button>
-                  <img className="ml-[30px]" src={Moredots_icon} alt="more" />
+                  <img className="sm:block sm:ml-[30px] hidden" src={Moredots_icon} alt="more" />
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="sm:flex pt-6 sm:pt-10 sm:items-start">
-            <div className="sm:flex sm:gap-x-3">
+          <div className="flex pt-6 sm:pt-10 items-start justify-between">
+            <div className="flex gap-x-3">
               <img
-                className="w-20 h-20 rounded-full"
+                className="lg:w-20 lg:h-20 w-[50px] h-[50px] rounded-full"
                 src={videoData?.items[0].snippet.thumbnails.default.url}
                 alt="channel img"
               />
               <div className="flex flex-col justify-center">
-                <h2>{videoData?.items[0].snippet.channelTitle}</h2>
+                <h2 className="text-base font-bold text-[#19202C]">{videoData?.items[0].snippet.channelTitle}</h2>
                 <p className="sm:pt-1 text-[#C2C2C2] text-[13px]">
                   Published on{" "}
                   {formatDate(videoData?.items[0].snippet.publishedAt)}
                 </p>
-                <p className="sm:pt-[14px] text-black opacity-60 md:w-3/4 line-clamp-6">{videoData?.items[0].snippet.description}</p>
+                <p className="hidden md:block text-black md:pt-5 opacity-60 md:w-3/4 line-clamp-6">{videoData?.items[0].snippet.description}</p>
               </div>
             </div>
-            <button className="hover:bg-[gray] bg-[#FF0000] text-white rounded-[20px] sm:px-5 sm:py-2">
+            <button className="hover:bg-[gray] bg-[#FF0000] text-white rounded-[20px] px-4 py-1 sm:px-5 sm:py-2">
               Subscribe
             </button>
           </div>
+          <p className="block md:hidden pt-2 sm:pt-[14px] text-black opacity-60 line-clamp-6">{videoData?.items[0].snippet.description}</p>
+
         </div>
       </div>
     </>

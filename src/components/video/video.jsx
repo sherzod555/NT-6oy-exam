@@ -22,7 +22,7 @@ const Video = ({ video }) => {
       <p className="pt-[10px] text-base font-semibold line-clamp-1">
         {video?.snippet.title}
       </p>
-      <div className="pt-2 flex items-center justify-between text-[#C2C2C2] text-xs">
+      <div className="pt-2 xl:pt-2 sm:pt-1 flex items-center justify-between text-[#C2C2C2] text-xs md:text-[8px] xl:text-xs">
         <div className="flex gap-x-2 items-center">
           <p> {getRandomViews()} k views</p>
           <p>•</p>
