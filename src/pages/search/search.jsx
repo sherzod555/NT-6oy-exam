@@ -32,7 +32,7 @@ const Search = () => {
       </div>
 
 
-      <div className="pagination w-full flex items-center justify-between mt-6 pt-6 pb-5 border-t-2">
+      <div className="pagination w-full flex items-center justify-between mt-6 pt-6 pb-24 sm:pb-5 border-t-2">
         <button
         className="hover:bg-[gray] bg-[#FF0000] text-white rounded-xl px-4 py-1 sm:px-5 sm:py-2"
           onClick={() => handlePageChange(currentPage - 1)}
