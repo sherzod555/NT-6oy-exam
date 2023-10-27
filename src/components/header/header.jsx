@@ -20,7 +20,7 @@ const Header = () => {
 
   async function searchVideos() {
     const data = await fetchVideos(
-      `https://youtube-v31.p.rapidapi.com/search?q=${searchQuery}&part=id%2Csnippet&type=video&maxResults=50`
+      `https://youtube-v31.p.rapidapi.com/search?q=${searchQuery}&part=id%2Csnippet&type=video&maxResults=100`
     );
 
     setSearchVideos(data.items);
