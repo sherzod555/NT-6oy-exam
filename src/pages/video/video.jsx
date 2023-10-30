@@ -83,7 +83,11 @@ const Video = () => {
                   <p>Share</p>
                 </button>
                 <button>
-                  <img className="sm:block sm:ml-[30px] hidden" src={Moredots_icon} alt="more" />
+                  <img
+                    className="sm:block sm:ml-[30px] hidden"
+                    src={Moredots_icon}
+                    alt="more"
+                  />
                 </button>
               </div>
             </div>
@@ -97,20 +101,25 @@ const Video = () => {
                 alt="channel img"
               />
               <div className="flex flex-col justify-center">
-                <h2 className="text-base font-bold text-[#19202C]">{videoData?.items[0].snippet.channelTitle}</h2>
+                <h2 className="text-base font-bold text-[#19202C]">
+                  {videoData?.items[0].snippet.channelTitle}
+                </h2>
                 <p className="sm:pt-1 text-[#C2C2C2] text-[13px]">
                   Published on{" "}
                   {formatDate(videoData?.items[0].snippet.publishedAt)}
                 </p>
-                <p className="hidden md:block text-black md:pt-5 opacity-60 md:w-3/4 line-clamp-6">{videoData?.items[0].snippet.description}</p>
+                <p className="hidden md:block text-black md:pt-5 opacity-60 md:w-3/4 line-clamp-6">
+                  {videoData?.items[0].snippet.description}
+                </p>
               </div>
             </div>
             <button className="hover:bg-[gray] bg-[#FF0000] text-white rounded-[20px] px-4 py-1 sm:px-5 sm:py-2">
               Subscribe
             </button>
           </div>
-          <p className="block md:hidden pt-2 sm:pt-[14px] text-black opacity-60 line-clamp-6">{videoData?.items[0].snippet.description}</p>
-
+          <p className="block md:hidden pt-2 sm:pt-[14px] text-black opacity-60 line-clamp-6">
+            {videoData?.items[0].snippet.description}
+          </p>
         </div>
       </div>
     </>

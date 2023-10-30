@@ -29,7 +29,7 @@ const Header = () => {
   const handleEnter = async (e) => {
     if (e.key === "Enter") {
       await searchVideos();
-      navigate("/search")
+      navigate("/search");
     }
   };
 
@@ -38,10 +38,22 @@ const Header = () => {
       <div className="container mx-auto  pb-3 fixed">
         <div className="sm:gap-x-5 flex w-screen  bg-white px-5 py-3 md:pr-16 md:pl-8 items-center justify-between sm:py-5">
           <div className="flex items-center justify-between">
-            <img src={hamburgerMenu} alt="hamburger-menu" className="hidden sm:block mr-7" />
+            <img
+              src={hamburgerMenu}
+              alt="hamburger-menu"
+              className="hidden sm:block mr-7"
+            />
             <Link to="/">
-              <img className="hidden sm:h-[25px] sm:w-auto sm:block" src={fullLogo} alt="logo" />
-              <img src={miniLogo} alt="logo" className="block sm:hidden h-auto w-9" />
+              <img
+                className="hidden sm:h-[25px] sm:w-auto sm:block"
+                src={fullLogo}
+                alt="logo"
+              />
+              <img
+                src={miniLogo}
+                alt="logo"
+                className="block sm:hidden h-auto w-9"
+              />
             </Link>
           </div>
 
@@ -56,7 +68,11 @@ const Header = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleEnter}
               />
-              <img src={searchIcon} alt="search-icon" className="sm:ml-4 hidden sm:block" />
+              <img
+                src={searchIcon}
+                alt="search-icon"
+                className="sm:ml-4 hidden sm:block"
+              />
             </div>
           </div>
 
@@ -88,11 +104,11 @@ const Header = () => {
               </li>
             </ul>
             <Link className="block sm:hidden" to="/">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src={profileAva}
-                    alt="icon"
-                  />
+              <img
+                className="h-10 w-10 rounded-full"
+                src={profileAva}
+                alt="icon"
+              />
             </Link>
           </div>
         </div>

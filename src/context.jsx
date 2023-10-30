@@ -7,7 +7,9 @@ const DataProvider = function ({ children }) {
   const [searchVideos, setSearchVideos] = useState([]);
 
   return (
-    <DataContext.Provider value={{videos, setVideos, searchVideos, setSearchVideos}}>
+    <DataContext.Provider
+      value={{ videos, setVideos, searchVideos, setSearchVideos }}
+    >
       {children}
     </DataContext.Provider>
   );
